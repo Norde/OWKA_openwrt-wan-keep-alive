@@ -2,8 +2,8 @@
 # This file is responsible for DNS check. The return value of its process
 # determines the ONLINE/OFFLINE state.
 
-IP_TO_PING=1.1.1.1
-PACKET_COUNT=4
+IP_TO_PING=9.9.9.9
+PACKET_COUNT=5
 
 ONLINE=0
 
