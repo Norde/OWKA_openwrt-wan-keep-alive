@@ -30,7 +30,7 @@ until [  ];do
 
 		if [[ "$OFFLINE_COUNT" -ge "$OFFLINE_COUNT_TRESHOLD" ]]; then
 			echo ">> Restarting router.."
-			sleep 5m
+			sleep 25m
 			$SH_RESTART_ROUTER
 		else
 			echo ">> Restarting interface.."
