@@ -1,52 +1,42 @@
 #!/bin/ash
 # Installation script.
 
-DIR=/usr/wwan-keep-alive
+DIR=/usr/openwrt-wan-keep-alive
 
-install_netcat()
+install_ncat()
 {
-	echo "Installing netcat (opkg install netcat) ..."
+	echo "Installing netcat (opkg install ncat) ..."
     opkg -V0 update
-    opkg -V0 install netcat
+    opkg -V0 install ncat
 }
 
 finish(){
 	echo ""
-    echo "NICE ;)"
-#    echo "There are 2 important steps to finish this setup:"
-#    echo ""
-#    echo "1. Make sure this line is in the cron. To open the cron editor, run: crontab -e"
-#    echo "   */2 * * * * $DIR/internet-keep-alive.sh"
-#    echo ""  
-#    echo "2. The interface representing the LTE connection is set to 'wwan'."
-#    echo "   To change the interface, please edit the line INTERFACE='wwan' in the 'restart-interface.sh'."
-    echo ""
-    echo "Enjoy!"
-
-    rm install.sh
+    echo "Installation of scripts and PID complete"
+    rm install_openwrt-wan-keep-alive.sh
 }
 
 download_files()
 {
-	DIR=/usr/wwan-keep-alive
+	DIR=/usr/openwrt-wan-keep-alive
 	mkdir $DIR
     	touch $DIR/log.txt
-  	echo "Downloading files from https://raw.githubusercontent.com/helplessheadless/openwrt-lte-keep-alive ..."
-   	wget -q --no-check-certificate https://raw.githubusercontent.com/helplessheadless/openwrt-lte-keep-alive/master/dns-test.sh -O $DIR/dns-test.sh && chmod +x $DIR/dns-test.sh
- 	wget -q --no-check-certificate https://raw.githubusercontent.com/helplessheadless/openwrt-lte-keep-alive/master/wwan-keep-alive.sh -O $DIR/wwan-keep-alive.sh && chmod +x $DIR/wwan-keep-alive.sh
-    	wget -q --no-check-certificate https://raw.githubusercontent.com/helplessheadless/openwrt-lte-keep-alive/master/restart-interface.sh -O $DIR/restart-interface.sh && chmod +x $DIR/restart-interface.sh
-	wget -q --no-check-certificate https://raw.githubusercontent.com/helplessheadless/openwrt-lte-keep-alive/master/restart-router.sh -O $DIR/restart-router.sh && chmod +x $DIR/restart-router.sh
-	wget -q --no-check-certificate https://raw.githubusercontent.com/helplessheadless/openwrt-lte-keep-alive/master/wwankeepalive -O /etc/init.d/wwankeepalive && chmod +x /etc/init.d/wwankeepalive
+  	echo "Downloading files from https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive ..."
+   	wget -q --no-check-certificate https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/dns-test.sh -O $DIR/dns-test.sh && chmod +x $DIR/dns-test.sh
+ 	wget -q --no-check-certificate https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wan-keep-alive.sh -O $DIR/wwan-keep-alive.sh && chmod +x $DIR/wwan-keep-alive.sh
+    	wget -q --no-check-certificate https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-interface.sh -O $DIR/restart-interface.sh && chmod +x $DIR/restart-interface.sh
+	wget -q --no-check-certificate https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-router.sh -O $DIR/restart-router.sh && chmod +x $DIR/restart-router.sh
+	wget -q --no-check-certificate https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wankeepalive -O /etc/init.d/wankeepalive && chmod +x /etc/init.d/wankeepalive
     	finish
 }
 
 echo ""
-echo "OpenWRT Keep-alive scripts."
+echo "OpenWRT wan-keep-alive scripts."
 
 while true; do
-    read -p "This will install netcat as a prerequisite. Do you want to continue (y/n)? " yn
+    read -p "This will install ncat as a prerequisite. Do you want to continue (y/n)? " yn
     case $yn in
-        [Yy]* ) install_netcat; break;;
+        [Yy]* ) install_ncat; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer 'y' or 'n'.";;
     esac
