@@ -5,7 +5,7 @@ DIR=$( cd $(dirname $0) ; pwd -P )
 LOG_FILE="$DIR/log.txt"
 
 OFFLINE_COUNT=$(cat $LOG_FILE | tail -4 | grep OFFLINE | wc -l)
-OFFLINE_COUNT_TRESHOLD=4
+OFFLINE_COUNT_TRESHOLD=5
 
 SH_DNS_TESTS="$DIR/dns-test.sh"
 SH_RESTART_INTERFACE="$DIR/restart-interface.sh"
@@ -30,7 +30,7 @@ until [  ];do
 
 		if [[ "$OFFLINE_COUNT" -ge "$OFFLINE_COUNT_TRESHOLD" ]]; then
 			echo ">> Restarting router.."
-			sleep 25m
+			sleep 5m
 			$SH_RESTART_ROUTER
 		else
 			echo ">> Restarting interface.."
