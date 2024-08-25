@@ -1,12 +1,12 @@
 #!/bin/sh /etc/rc.common
-# Wwan-keep-alive initscript
+# Openwrt-wan-keep-alive initscript
 # Copyright (C) 2007 OpenWrt.org
 
 START=99
 STOP=15
 PIDFILE=/var/pids/wan-keep-alive.pid
 PIDDIR=/var/pids
-BINFILE=/usr/wwan-keep-alive/wan-keep-alive.sh
+BINFILE=/usr/openwrt-wan-keep-alive/wan-keep-alive.sh
 
 start() {
 	[ -d $PIDDIR ] || mkdir -p $PIDDIR
