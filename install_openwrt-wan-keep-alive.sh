@@ -42,6 +42,7 @@ while true; do
     esac
 done
 
+echo "ncat have been installed"
 echo ""
 
 while true; do
