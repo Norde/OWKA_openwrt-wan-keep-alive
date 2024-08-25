@@ -4,9 +4,9 @@
 
 START=99
 STOP=15
-PIDFILE=/var/pids/wwan-keep-alive.pid
+PIDFILE=/var/pids/wan-keep-alive.pid
 PIDDIR=/var/pids
-BINFILE=/usr/wwan-keep-alive/wwan-keep-alive.sh
+BINFILE=/usr/wwan-keep-alive/wan-keep-alive.sh
 
 start() {
 	[ -d $PIDDIR ] || mkdir -p $PIDDIR
