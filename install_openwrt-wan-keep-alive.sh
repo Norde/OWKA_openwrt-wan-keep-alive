@@ -4,19 +4,20 @@
 DIR=/usr/openwrt-wan-keep-alive
 
 echo ""
-echo "OpenWRT wan-keep-alive scripts."
+echo "##### OpenWRT wan-keep-alive scripts #####"
+echo ""
 
 install_ncat()
 {
 	echo "Installing netcat (opkg install ncat) ..."
-    opkg -V0 update
-    opkg -V0 install ncat
+	opkg -V0 update
+	opkg -V0 install ncat
 }
 
 finish(){
 	echo ""
-    echo "Installation of scripts and PID complete"
-    rm install_openwrt-wan-keep-alive.sh
+	echo "Installation of scripts and PID complete"
+	rm install_openwrt-wan-keep-alive.sh
 }
 
 download_files()
