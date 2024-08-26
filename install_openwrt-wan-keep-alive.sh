@@ -6,28 +6,6 @@ DIR=/usr/openwrt-wan-keep-alive
 echo ""
 echo "OpenWRT wan-keep-alive scripts."
 
-while true; do
-    read -p "This will install ncat as a prerequisite. Do you want to continue (y/n)? " yn
-    case $yn in
-        [Yy]* ) install_ncat; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer 'y' or 'n'.";;
-    esac
-done
-
-echo "ncat have been installed"
-echo ""
-
-while true; do
-    read -p "This will download the files into $DIR. Do you want to continue (y/n)? " yn
-    case $yn in
-        [Yy]* ) download_files; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer 'y' or 'n'.";;
-    esac
-done
-
-
 install_ncat()
 {
 	echo "Installing netcat (opkg install ncat) ..."
@@ -54,3 +32,28 @@ download_files()
 	wget -q --no-check-certificate https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wankeepalive -O /etc/init.d/wankeepalive && chmod +x /etc/init.d/wankeepalive
     	finish
 }
+
+
+while true; do
+    read -p "This will install ncat as a prerequisite. Do you want to continue (y/n)? " yn
+    case $yn in
+        [Yy]* ) install_ncat; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer 'y' or 'n'.";;
+    esac
+done
+
+echo "ncat have been installed"
+echo ""
+
+while true; do
+    read -p "This will download the files into $DIR. Do you want to continue (y/n)? " yn
+    case $yn in
+        [Yy]* ) download_files; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer 'y' or 'n'.";;
+    esac
+done
+
+
+
