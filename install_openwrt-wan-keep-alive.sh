@@ -39,7 +39,7 @@ while true; do
     read -p "This will install ncat as a prerequisite. Do you want to continue (y/n)? " yn
     case $yn in
         [Yy]* ) install_ncat; break;;
-        [Nn]* ) ;;
+        [Nn]* ) exit;;
         * ) echo "Please answer 'y' or 'n'.";;
     esac
 done
