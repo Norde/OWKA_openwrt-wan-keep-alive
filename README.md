@@ -2,7 +2,7 @@ This is my fork of mchsks's lte-keep-alive scripts for OpenWRT. Thanks for this 
 
 To install run this via ssh:
 
-	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/install_owkae.sh -O install_owka.sh && chmod +x install_owka.sh && ./install_owka.sh
+	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/install_owka.sh -O install_owka.sh && chmod +x install_owka.sh && ./install_owka.sh
 
 The Major difference to the original:
    Keep Alive script is started as daemon and can be enabled or disabled via LUCI.
@@ -61,7 +61,7 @@ Online/offline results are being logged into `log.txt`, which has a cap of `1100
 **Installation**<br>
 1. Log into the router via SSH and go to the directory where you want to keep the script files.<br>
 2. Make sure the router is online, then **run the installer using this command** and follow the instructions:<br>
-   `wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/install_owkae.sh -O install_owka.sh && chmod +x install_owka.sh && ./install_owka.sh`
+   `wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/install_owka.sh -O install_owka.sh && chmod +x install_owka.sh && ./install_owka.sh`
 
 Simple, right?<br>
 
