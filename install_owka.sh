@@ -20,18 +20,18 @@ install_ncat()
 finish(){
 	echo ""
 	echo "Installation of scripts and PID complete"
-	rm install_openwrt-wan-keep-alive.sh
+	rm install_owka.sh
 }
 
 download_files()
 {
 	DIR=/usr/openwrt-wan-keep-alive
 	mkdir $DIR
-    touch $DIR/log.txt
+ 	touch $DIR/log.txt
   	echo "Downloading files from https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master ..."
    	wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/dns-test.sh -O $DIR/dns-test.sh && chmod +x $DIR/dns-test.sh
  	wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wan-keep-alive.sh -O $DIR/wwan-keep-alive.sh && chmod +x $DIR/wwan-keep-alive.sh
-    wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-interface.sh -O $DIR/restart-interface.sh && chmod +x $DIR/restart-interface.sh
+ 	wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-interface.sh -O $DIR/restart-interface.sh && chmod +x $DIR/restart-interface.sh
 	wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-router.sh -O $DIR/restart-router.sh && chmod +x $DIR/restart-router.sh
 	wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wankeepalive -O /etc/init.d/wankeepalive && chmod +x /etc/init.d/wankeepalive
     finish
