@@ -47,7 +47,7 @@ if [ "" = "$NCAT_INSTALLED" ]; then
         [Nn]* ) exit;;
         * ) echo "Please answer 'y' or 'n'.";;
     esac
-fi
+done
 
 echo ""
 
