@@ -2,7 +2,7 @@ This is my fork of mchsks's lte-keep-alive scripts for OpenWRT. Thanks for this 
 
 To install run this via ssh:
 
-	`wget -q --no-check-certificate https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/install_openwrt-wan-keep-alive.sh -O install_openwrt-wan-keep-alive.sh && chmod +x install_openwrt-wan-keep-alive.sh && ./install_openwrt-wan-keep-alive.sh`
+	`wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/install_openwrt-wan-keep-alive.sh -O install_openwrt-wan-keep-alive.sh && chmod +x install_openwrt-wan-keep-alive.sh && ./install_openwrt-wan-keep-alive.sh`
 
 The Major difference to the original:
    Keep Alive script is started as daemon and can be enabled or disabled via LUCI.
