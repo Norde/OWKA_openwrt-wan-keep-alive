@@ -5,5 +5,5 @@
 # syslog entry
 logger -s "OpenWRT Wan keep alive: Restarting all nerwork interfaces (wan, lan and wifi)"
 
-echo "Restarting network interfaces"
+echo "Restarting network interfaces..."
 service network restart
