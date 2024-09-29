@@ -38,7 +38,7 @@ download_files()
 }
 
 
-echo Checking for ncat package: $NCAT_INSTALLED
+echo "Checking for ncat package: $NCAT_INSTALLED"
 if [ "" = "$NCAT_INSTALLED" ]; then
     echo "ncat package is not installed"
     read -p "This will install ncat package as a prerequisite. Do you want to continue (y/n)?" yn
