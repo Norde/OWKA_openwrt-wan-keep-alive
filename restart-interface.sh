@@ -1,16 +1,9 @@
 #!/bin/ash
-# This file is responsible for restarting the network interface.
+# This file is responsible for restarting all network interfaces.
 # Should be run once OFFLINE state is detected.
 
-INTERFACE="wan"
-
 # syslog entry
-logger -s "INTERNET KEEP ALIVE SYSTEM: Restarting the Wan interface."
+logger -s "OpenWRT Wan keep alive: Restarting all nerwork interfaces (wan, lan and wifi)"
 
-echo "SH RESTART IFACE DOWN"
-ifdown $INTERFACE
-
-sleep 2
-
-echo "SH RESTART IFACE UP"
-ifup $INTERFACE
+echo "Restarting network interfaces"
+service network restart
