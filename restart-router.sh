@@ -7,9 +7,7 @@ DIR=$( cd $(dirname $0) ; pwd -P )
 LOG_FILE="$DIR/log.txt"
 
 echo "$(date) > TOO MANY OFFLINE TRYOUTS" >> $LOG_FILE
-echo "$(date) > GOING TO REBOOT NOW" >> $LOG_FILE
-echo "$(date) > NOW!" >> $LOG_FILE
-echo "$(date) > SORRY FOR ANY INCONVENIENCE." >> $LOG_FILE
+echo "$(date) > Rebooting route..." >> $LOG_FILE
 
 echo "SH REBOOT"
 reboot
