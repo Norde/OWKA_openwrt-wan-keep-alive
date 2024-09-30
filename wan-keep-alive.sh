@@ -18,7 +18,7 @@ LINES_COUNT=$(wc -l $LOG_FILE | awk '{print $1}')
 until [  ];do
 	# if the log files gets huge, strip it, keep last LINES_MIN lines
 	if [[ "$LINES_COUNT" -ge "$LINES_MAX" ]]; then
-	echo "$(tail -$LINES_MIN $LOG_FILE)" > $LOG_FILE
+		echo "$(tail -$LINES_MIN $LOG_FILE)" > $LOG_FILE
 	fi
 
 	# DNS test, it's result defines the ONLINE/OFFLINE state
@@ -28,7 +28,7 @@ until [  ];do
 		echo "Router is offline !."
 		echo "$(date) OFFLINE > Restarting interface" >> $LOG_FILE
 
-	if [[ "$OFFLINE_COUNT" -ge "$OFFLINE_COUNT_TRESHOLD" ]]; then
+		if [[ "$OFFLINE_COUNT" -ge "$OFFLINE_COUNT_TRESHOLD" ]]; then
 			echo ">> Restarting router in 3min..."
 			sleep 1m
 			echo ">> Restarting router in 2min..."
