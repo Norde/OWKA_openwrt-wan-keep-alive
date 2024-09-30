@@ -15,7 +15,7 @@ LINES_MAX=11000
 LINES_MIN=6000
 LINES_COUNT=$(wc -l $LOG_FILE | awk '{print $1}')
 
-until [  ];do
+until [  ];do
 	# if the log files gets huge, strip it, keep last LINES_MIN lines
 	if [[ "$LINES_COUNT" -ge "$LINES_MAX" ]]; then
 	echo "$(tail -$LINES_MIN $LOG_FILE)" > $LOG_FILE
