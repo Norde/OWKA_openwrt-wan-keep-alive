@@ -29,7 +29,7 @@ download_files()
 	mkdir $DIR
  	touch $DIR/log.txt
   	echo "Downloading files from https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master ..."
-   	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/dns-test.sh -O $DIR/dns-test.sh && chmod +x $DIR/dns-test.sh
+   	wget -nv --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/dns-test.sh -O $DIR/dns-test.sh && chmod +x $DIR/dns-test.sh
  	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wan-keep-alive.sh -O $DIR/wan-keep-alive.sh && chmod +x $DIR/wan-keep-alive.sh
  	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-interface.sh -O $DIR/restart-interface.sh && chmod +x $DIR/restart-interface.sh
 	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-router.sh -O $DIR/restart-router.sh && chmod +x $DIR/restart-router.sh
