@@ -29,11 +29,11 @@ download_files()
 	mkdir $DIR
  	touch $DIR/log.txt
   	echo "Downloading files from https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master ..."
-   	wget -nv --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/dns-test.sh -O $DIR/dns-test.sh && chmod +x $DIR/dns-test.sh
- 	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wan-keep-alive.sh -O $DIR/wan-keep-alive.sh && chmod +x $DIR/wan-keep-alive.sh
- 	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-interface.sh -O $DIR/restart-interface.sh && chmod +x $DIR/restart-interface.sh
-	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-router.sh -O $DIR/restart-router.sh && chmod +x $DIR/restart-router.sh
-	wget --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wankeepalive -O /etc/init.d/wankeepalive && chmod +x /etc/init.d/wankeepalive
+   	wget -n --show-progress --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/dns-test.sh -O $DIR/dns-test.sh && chmod +x $DIR/dns-test.sh
+ 	wget -n --show-progress --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wan-keep-alive.sh -O $DIR/wan-keep-alive.sh && chmod +x $DIR/wan-keep-alive.sh
+ 	wget -n --show-progress --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-interface.sh -O $DIR/restart-interface.sh && chmod +x $DIR/restart-interface.sh
+	wget -n --show-progress --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-router.sh -O $DIR/restart-router.sh && chmod +x $DIR/restart-router.sh
+	wget -n --show-progress --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wankeepalive -O /etc/init.d/wankeepalive && chmod +x /etc/init.d/wankeepalive
 	echo "..."
 	echo "Enabling and starting wankeepalive script ..."
 	/etc/init.d/wankeepalive enable && /etc/init.d/wankeepalive start
