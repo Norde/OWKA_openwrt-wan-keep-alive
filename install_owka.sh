@@ -19,7 +19,7 @@ install_ncat()
 
 finish(){
 	echo ""
-	echo "Installation of scripts and PID complete"
+	echo "OpenWRT wan-keep-alive is now installed and ready"
 	rm install_owka.sh
 }
 
@@ -61,5 +61,4 @@ while true; do
         [Nn]* ) echo "Installation aborted by user" ; exit;;
         * ) echo "Please answer 'y' or 'n'.";;
     esac
-    echo "OpenWRT wan-keep-alive is now installed and ready"
 done
