@@ -6,7 +6,7 @@ DIR=/usr/openwrt-wan-keep-alive
 NCAT_INSTALLED=$(opkg status ncat|grep "installed")
 
 echo ""
-echo "##### OpenWRT wan-keep-alive scripts #####"
+echo "##### OpenWRT wan-keep-alive #####"
 echo ""
 
 install_ncat()
@@ -34,7 +34,10 @@ download_files()
  	wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-interface.sh -O $DIR/restart-interface.sh && chmod +x $DIR/restart-interface.sh
 	wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/restart-router.sh -O $DIR/restart-router.sh && chmod +x $DIR/restart-router.sh
 	wget -q --no-check-certificate --no-cache https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/master/wankeepalive -O /etc/init.d/wankeepalive && chmod +x /etc/init.d/wankeepalive
-    finish
+	echo "..."
+	echo "Enabling and starting wankeepalive script ..."
+	/etc/init.d/wankeepalive enable && /etc/init.d/wankeepalive start
+	finish
 }
 
 
@@ -58,4 +61,5 @@ while true; do
         [Nn]* ) echo "Installation aborted by user" ; exit;;
         * ) echo "Please answer 'y' or 'n'.";;
     esac
+    echo "OpenWRT wan-keep-alive is now installed and ready"
 done
