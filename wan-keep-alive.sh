@@ -29,8 +29,13 @@ until [  ];do
 		echo "$(date) OFFLINE > Restarting interface" >> $LOG_FILE
 
 	if [[ "$OFFLINE_COUNT" -ge "$OFFLINE_COUNT_TRESHOLD" ]]; then
+			echo ">> Restarting router in 3min..."
+			sleep 1m
+			echo ">> Restarting router in 2min..."
+			sleep 1m
+			echo ">> Restarting router in 1min..."
+			sleep 1m
 			echo ">> Restarting router..."
-			sleep 5m
 			$SH_RESTART_ROUTER
 		else
 			echo ">> Restarting interface..."
