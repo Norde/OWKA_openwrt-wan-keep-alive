@@ -2,13 +2,14 @@
 
 Another fork of mchsks's lte-keep-alive scripts for OpenWRT.
 
+If for some reason your Internet connection crashes from time to time (buggy ISP's modem, unstable wifi, unstable wwan, unstable router) and a reboot of the network interface or the router itself solves the problem, this script could be very useful!
 
 ![OpenWRT](https://github.com/Norde/openwrt-wan-keep-alive/blob/master/images/openwrt2020.png)
 ![OWKA](https://github.com/Norde/openwrt-wan-keep-alive/blob/master/images/owka.png)
 
 
 
-If for some reason your Internet connection crashes from time to time (buggy ISP's modem, unstable wifi, unstable wwan, unstable router) and a reboot of the network interface or the router itself solves the problem, this script could be very useful!
+
 
 
 
