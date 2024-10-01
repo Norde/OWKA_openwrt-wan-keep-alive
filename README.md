@@ -12,7 +12,7 @@ If for some reason your Internet connection crashes from time to time (buggy ISP
 
 
 
-Script functionality:
+### Script functionality:
 - Check whether the router has Internet access by pinging 2 privacy-preserving DNS servers: 9.9.9.9 (Quad9) and 193.110.81.0 (DNS0.EU).
 - If the router is offline, restart all network interface (wan, lan and wifi) up to 5 time (with a 45sec wait in between).
 - If restarting interface is not enough, reboot the router (with 3min wait to avoid boot loop).
@@ -20,7 +20,7 @@ Script functionality:
 - Automatic installation script.
   
 
-Update compare to original and other forks:
+### Update compare to original and other forks:
 - Internet connection integrity is based on pinging 2 dns servers to avoid false positives in the event of failure of one of them.
 - Use of ncat package, a much more improved and recent implementation of netcat, instead of the default busybox netcat "compact" or the outdated netcat package.
 - The script is launched by a service daemon (etc/inid.d) and can therefore be controlled from the LUCI GUI (Thanks to helplessheadless for this nice improvment).
@@ -35,7 +35,7 @@ To install OWKA, run the following command and follow the instructions:
 
 
 
-### Folders
+## Folders
 
 Scripts and logs folder:
 /usr/openwrt-wan-keep-alive
@@ -44,7 +44,7 @@ Daemon:
 /etc/init.d/wankeepalive
 
    
-### Future developments
+## Future developments
 
 - Enable customization of parameters via the installation script (installation folder, daemon name, dns, delay between restart, number of trials...)
 - Add the option to select between reseting one specific interface or all network.
