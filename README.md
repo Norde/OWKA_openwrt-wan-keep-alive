@@ -3,8 +3,8 @@
 Another fork of mchsks's lte-keep-alive scripts for OpenWRT.
 
 
-![OpenWRT](https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/edit/master/images/openwrt2020.png)
-![OWKA](https://raw.githubusercontent.com/Norde/openwrt-wan-keep-alive/edit/master/owka.png)
+![OpenWRT](https://github.com/Norde/openwrt-wan-keep-alive/blob/master/images/openwrt2020.png)
+![OWKA](https://github.com/Norde/openwrt-wan-keep-alive/blob/master/images/owka.png)
 
 
 
