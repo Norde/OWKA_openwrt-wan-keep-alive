@@ -1,8 +1,8 @@
 # OpenWRT wan Keep alive (OWKA) scripts
 
-Another fork of mchsks's lte-keep-alive scripts for OpenWRT.
+Another fork of [mchsks's lte-keep-alive scripts](https://github.com/mchsk/openwrt-lte-keep-alive) for OpenWRT.
 
-If for some reason your Internet connection crashes from time to time (buggy ISP's modem, unstable wifi, unstable wwan, unstable router) and a reboot of the network interface or the router itself solves the problem, this script could be very useful!
+If for some reason your Internet connection crashes from time to time (buggy ISP's modem, unstable wifi, unstable wwan, unstable router) and a reboot of the network interfaces or the router itself solves the problem, this script is for you!
 
 ![OpenWRT](https://github.com/Norde/openwrt-wan-keep-alive/blob/master/images/openwrt2020.png)
 ![OWKA](https://github.com/Norde/openwrt-wan-keep-alive/blob/master/images/owka.png)
@@ -14,7 +14,7 @@ If for some reason your Internet connection crashes from time to time (buggy ISP
 
 
 ### Script functionality:
-- Check whether the router has Internet access by pinging 2 privacy-preserving DNS servers: 9.9.9.9 (Quad9) and 193.110.81.0 (DNS0.EU).
+- Check whether the router has Internet access by pinging 2 privacy-preserving DNS servers: 9.9.9.9 ([Quad9](https://quad9.net/)) and 193.110.81.0 ([DNS0.EU](https://www.dns0.eu)).
 - If the router is offline, restart all network interface (wan, lan and wifi) up to 5 time (with a 45sec wait in between).
 - If restarting interface is not enough, reboot the router (with 3min wait to avoid boot loop).
 - Event log (with auto-purge to avoid saturating router storage).
@@ -23,7 +23,7 @@ If for some reason your Internet connection crashes from time to time (buggy ISP
 
 ### Update compare to original and other forks:
 - Internet connection integrity is based on pinging 2 dns servers to avoid false positives in the event of failure of one of them.
-- Use of ncat package, a much more improved and recent implementation of netcat, instead of the default busybox netcat "compact" or the outdated netcat package.
+- Use of [ncat](https://openwrt.org/packages/pkgdata/ncat) package, a much more improved and recent implementation of netcat, instead of the default busybox netcat "compact" or the outdated netcat package.
 - The script is launched by a service daemon (etc/inid.d) and can therefore be controlled from the LUCI GUI (Thanks to helplessheadless for this nice improvment).
 - The installation script automatically installs the ncat package if required and also activates and starts the daemon service.
 
