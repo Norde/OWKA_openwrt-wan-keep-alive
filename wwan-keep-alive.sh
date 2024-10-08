@@ -4,7 +4,7 @@
 DIR=$( cd $(dirname $0) ; pwd -P )
 LOG_FILE="$DIR/log.txt"
 
-OFFLINE_COUNT=$(cat $LOG_FILE | tail -4 | grep OFFLINE | wc -l)
+OFFLINE_COUNT=$(cat $LOG_FILE | tail -6 | grep OFFLINE | wc -l)
 OFFLINE_COUNT_TRESHOLD=4
 
 SH_DNS_TESTS="$DIR/dns-test.sh"
